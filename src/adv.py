@@ -42,13 +42,19 @@ player_creation = input("Enter a player name: ")
 player = Player(player_creation, "outside")
 print(player)
 
-# Write a loop that:
-#
-# * Prints the current room name
-# * Prints the current description (the textwrap module might be useful here).
-# * Waits for user input and decides what to do.
-#
-# If the user enters a cardinal direction, attempt to move to the room there.
-# Print an error message if the movement isn't allowed.
-#
-# If the user enters "q", quit the game.
+user_choice = ""
+
+while (user_choice != "q"):
+    print(room[player.current_room].name)
+    print(room[player.current_room].description)
+
+    # Write a loop that:
+    #
+    # * Prints the current room name
+    # * Prints the current description (the textwrap module might be useful here).
+    # * Waits for user input and decides what to do.
+    #
+    # If the user enters a cardinal direction, attempt to move to the room there.
+    # Print an error message if the movement isn't allowed.
+    #
+    # If the user enters "q", quit the game.
