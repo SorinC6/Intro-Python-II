@@ -114,7 +114,6 @@ while user_choice != "q":
                     f"New Dirrection: {player.name} in going to {user_direction} in {player.current_room.name}"
                 )
                 print("********Current Item in the room***** " + cc.lower())
-
                 print(room[cc.lower()].getItem())
 
             else:
@@ -141,6 +140,8 @@ while user_choice != "q":
 
         elif parse[0] == "drop":
             print("Drop Item")
+            player.dropItem(parse[1])
+
         else:
             print("Invalid input")
             # Print an error message if the movement isn't allowed.

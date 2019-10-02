@@ -11,6 +11,9 @@ class Player:
     def addItem(self, item):
         self.items.append(item)
 
+    def dropItem(self, item):
+        self.items.remove(item)
+
     def getItems(self):
         return [value for value in self.items]
 
