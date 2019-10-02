@@ -8,6 +8,12 @@ class Player:
         self.current_room = current_room
         self.items = items
 
+    def addItem(self, item):
+        self.items.append(item)
+
+    def getItems(self):
+        return [value for value in self.items]
+
     def __str__(self):
         items_format = [value for value in self.items]
         return f"Palyer: {self.name}, {self.current_room},Player Items: {items_format}"

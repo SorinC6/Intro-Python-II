@@ -24,7 +24,7 @@ the distance, but there is no way across the chasm.""",
         [Item("shiled", "protection from fire")],
     ),
     "narrow": Room(
-        "Narrow Passage",
+        "Passage Narrow",
         """The narrow passage bends here from west
 to north. The smell of gold permeates the air.""",
         [Item("sword", "Best weapon for close attack")],
@@ -62,6 +62,19 @@ player = Player(player_creation, initial_room)
 print(f"******Player Info*********\n{player}\n\n")
 
 user_choice = ""
+
+
+# def addItem(item_selection, current_player):
+#     for item in current_player.current_room.items:
+#         if item.name == item_selection:
+#             current_player.items.append(item)
+#             current_player.current_room.items = [
+#                 item
+#                 for item in current_player.current_room.items
+#                 if item.name != item_selection
+#             ]
+#             return True
+
 
 # Write a loop that:
 #
@@ -108,7 +121,7 @@ while user_choice != "q":
                 print(f"You hit a wall, keep trying")
         elif user_direction == "i":
             if len(player.items) > 0:
-                print(f"{player.name} items are: {player.items}")
+                print(f"{player.name} items are: {player.getItems()}")
             else:
                 print(f"{player.name} does't have any items in inventory")
         elif user_direction == "q":
@@ -118,7 +131,18 @@ while user_choice != "q":
     if len(parse) == 2:
 
         if parse[0] == "get":
-            pass
+            # process the request in the take_item function
+            # add = addItem(parse[1], player)
+            player.addItem(parse[1])
+            # if sucessful, call the on_take method to print to player the result
+            print("Added Succesfully")
+            print(player.items)
+            # if unsucessful, print the error
+
+        elif parse[0] == "drop":
+            print("Drop Item")
+        else:
+            print("Invalid input")
             # Print an error message if the movement isn't allowed.
             #
             # If the user enters "q", quit the game.
