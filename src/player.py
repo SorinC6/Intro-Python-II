@@ -10,4 +10,4 @@ class Player:
 
     def __str__(self):
         items_format = [value for value in self.items]
-        return f"Palyer: {self.name}, Current Room: {self.current_room},Player Items: {items_format}"
+        return f"Palyer: {self.name}, {self.current_room},Player Items: {items_format}"
