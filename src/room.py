@@ -8,6 +8,9 @@ class Room:
         self.description = description
         self.items = items
 
+    def getItem(self):
+        return self.items[0]
+
     def __str__(self):
         # items_format = []
         # if(self.items):
@@ -15,4 +18,4 @@ class Room:
         # else:
         #     items_format: "No items in the room"
 
-        return f"Room: {self.name}, About: {self.description}"
+        return f"Room: {self.name}, About: {self.description} Items in Room: {self.items[0]}"

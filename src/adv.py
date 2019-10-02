@@ -92,9 +92,18 @@ while user_choice != "q":
             # print(f"New Direction: {new_direction}")
             if hasattr(player.current_room, new_direction):
                 player.current_room = getattr(player.current_room, new_direction)
+                cc = player.current_room.name.split(" ")
+                if len(cc) == 2:
+                    cc = cc[1]
+                else:
+                    cc = cc[0]
                 print(
-                    f"New Dirrection: {player.name} in going to {user_direction} in room: {player.current_room.name}"
+                    f"New Dirrection: {player.name} in going to {user_direction} in {player.current_room.name}"
                 )
+                print("********Current Item in the room***** " + cc.lower())
+
+                print(room[cc.lower()].getItem())
+
             else:
                 print(f"You hit a wall, keep trying")
         elif user_direction == "i":
